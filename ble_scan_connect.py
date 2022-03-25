@@ -57,10 +57,11 @@ try:
     dev.setDelegate(MyDelegate())
 
     print("Connected")
-    '''
+    
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     # ch = ch + 2
     handle = ch.getHandle()
+    handle += 2
     print(f"the handle is: {handle}")
     if (ch.supportsRead()):
         print (ch.read())
@@ -73,9 +74,9 @@ try:
             print("notifications")
             dev.readCharacteristic(handle)
             break
-    '''
-    for i in dev.getDescriptors():
-        print(f"UUID: {i.uuid}")
+    
+    # for i in dev.getDescriptors():
+    #     print(f"UUID: {i.uuid}")
 
 
 finally:
